@@ -44,7 +44,8 @@ function get_org_progress() {
                         if (result.organization == organization) {
                             orgCount = opts[organization]["submissions"];
                             orgName = opts[organization]["name"];
-                            $('#org_progress').text(orgCount + ' submitted by ' + orgName + ' so far.');
+                            $('#org_progress').text(orgCount + ' submitted by '
+                              + orgName + ' so far.');
 
                         }
                     });
@@ -66,6 +67,7 @@ function init() {
 $('#submit').click(function() {
     chrome.storage.local.set({mode : $('#mode').val()});
     chrome.storage.local.set({organization: $('#organization').val()});
+    init();
 
 });
 
